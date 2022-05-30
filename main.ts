@@ -21,12 +21,12 @@ app.get('/', (req, res) => {
 
 app.get('/expenses', async (req, res) => {
   const expenses = await getExpense()
-  console.log(expenses)
+  console.log('Showed Expenses')
   res.json(expenses)
 })
 
 app.post('/expenses', async (req, res) => {
-  console.log(req.body)
+  console.log('Expenses posted')
   await createExpense(req.body as ExpenseType)
   res.json(req.body)
 })
